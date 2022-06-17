@@ -5,6 +5,7 @@
 #include "HowToScene.h"
 using namespace std;
 
+
 int main()
 {
 	//랜덤 함수 초기화
@@ -15,9 +16,9 @@ int main()
 	HowToScene howToScene;
 
 	//Scene 리스트
-	//static Scene sceneList[Scene::SCENE_MAX] = {
-	//	mainScene, howToScene, mainScene, mainScene
-	//};
+	static Scene* sceneList[Scene::SCENE_MAX] = {
+		&mainScene, &howToScene, &mainScene, &mainScene
+	};
 
 	//사용할 씬 레퍼런스
 	Scene* scene = &mainScene;
@@ -48,30 +49,7 @@ int main()
 		}
 		else if (nextScene != Scene::SCENE_NOCHANGE) //게임 씬에 전환이 없는 경우 씬을 전환하지 않음
 		{
-			switch (nextScene)
-			{
-			case Scene::SCENE_MAIN:
-				scene = &mainScene;
-				break;
-			case Scene::SCENE_HOWTOPLAY:
-				scene = &howToScene;
-				break;
-			case Scene::SCENE_TOWN:
-				scene = &mainScene;
-				break;
-			case Scene::SCENE_STAT:
-				scene = &mainScene;
-				break;
-			case Scene::SCENE_STORE:
-				scene = &mainScene;
-				break;
-			case Scene::SCENE_BATTLE:
-				scene = &mainScene;
-				break;
-			case Scene::SCENE_HEALING:
-				scene = &mainScene;
-				break;
-			}
+			scene = sceneList[nextScene];
 		}
 	}
 
