@@ -21,7 +21,7 @@ Scene::SceneType MainScene::Update(int input)
 {
 	if (input < 1 || input > OPTION_NUMBER)
 	{
-		return SCENE_ERROR;
+		return Scene::SCENE_ERROR;
 	}
 
 	return _optionChoose[input - 1];

@@ -2,7 +2,7 @@
 
 Scene::SceneType Scene::Update(int input)
 {
-	return SCENE_ERROR;
+	return Scene::SCENE_ERROR;
 }
 
 void Scene::SetOptionCount(int optionCount)
@@ -15,12 +15,12 @@ int Scene::GetOptionCount()
 	return _optionCount;
 }
 
-void Scene::Init() const
+void Scene::Render() const
 {
 	return;
 }
 
-void Scene::Render() const
+void Scene::printOptions() const
 {
 	return;
 }

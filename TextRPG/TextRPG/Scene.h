@@ -16,7 +16,8 @@ public:
 		SCENE_HEALING,
 		SCENE_MAX,
 		SCENE_EXIT,
-		SCENE_ERROR
+		SCENE_NOCHANGE,
+		SCENE_ERROR	//원치 않은 값이 들어온 경우(ex. 1~2의 선택지, 입력: 5)
 	}; 
 
 public:
@@ -50,5 +51,5 @@ protected:
 
 private:
 	//선택지
-	int _optionCount;		//선택지 개수
+	int _optionCount = 0;		//선택지 개수
 };

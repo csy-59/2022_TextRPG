@@ -19,9 +19,7 @@ private:
 
 private:
 	static const int OPTION_NUMBER = 3;
-	static const SceneType _optionChoose[OPTION_NUMBER];
-};
-
-const Scene::SceneType MainScene::_optionChoose[OPTION_NUMBER] = { 
-	SCENE_TOWN, SCENE_HOWTOPLAY, SCENE_EXIT 
+	const SceneType _optionChoose[OPTION_NUMBER] = {
+		SCENE_TOWN, SCENE_HOWTOPLAY, SCENE_EXIT
+	};
 };

@@ -21,12 +21,30 @@ int main()
 
 	bool isGameOver = false;
 
+	enum Scene::SceneType nextScene = Scene::SCENE_NOCHANGE;
 	while (isGameOver == false)
 	{
+		system("cls");
+		
 		scene.Render();
 
-		Scene::SceneType
+		int input;
+		cin >> input;
+
+		nextScene = scene.Update(input);
+
+		if (nextScene == Scene::SCENE_EXIT) //게임 종료이면 게임을 종료시킴
+		{
+			isGameOver = true;
+		}
+		else if (nextScene != Scene::SCENE_NOCHANGE) //게임 씬에 전환이 없는 경우 씬을 전환하지 않음
+		{
+			//씬 전환
+			scene = sceneList[nextScene];
+		}
 	}
+
+	system("cls");
 
 	return 0;
 }
