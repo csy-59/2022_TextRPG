@@ -9,6 +9,7 @@ int main()
 	//랜덤 함수 초기화
 	Random::Init();
 
+	//씬 객체들 생성
 	MainScene mainScene;
 
 	//Scene 리스트
@@ -28,6 +29,7 @@ int main()
 		
 		scene.Render();
 
+		cout << ">> ";
 		int input;
 		cin >> input;
 

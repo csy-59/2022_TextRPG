@@ -9,10 +9,10 @@ MainScene::MainScene()
 
 void MainScene::Render() const
 {
-	cout << "\t#############\n";
-	cout << "\t##  가자,  ##\n";
-	cout << "\t##   집에  ##\n";
-	cout << "\t#############\n";
+	cout << "###################\n";
+	cout << "##     가자,     ##\n";
+	cout << "##      집에     ##\n";
+	cout << "###################\n";
 
 	printOptions();
 }
