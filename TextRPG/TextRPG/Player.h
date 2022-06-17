@@ -19,6 +19,7 @@ public:
 	int GetNextLevelExp() const;
 
 	//아이템 관련 Getter
+	int GetCoinCount() const;
 	int GetHansotCount() const;
 	int GetNBBCount() const;
 	int GetMonsterCount() const;
@@ -35,6 +36,9 @@ private:
 	int _attack = 3;
 	int _defence = 0;
 	int _stress = 0;
+
+	//코인
+	int _coin = 10;
 
 	//레벨 관련
 	int _level = 1;
