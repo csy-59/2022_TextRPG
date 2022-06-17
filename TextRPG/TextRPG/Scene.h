@@ -6,17 +6,21 @@ public:
 	//씬의 타입
 	enum SceneType
 	{
-		SCENE_MAIN,
-		SCENE_HOWTOPLAY,
-		SCENE_TOWN,
-		SCENE_STAT,
-		SCENE_STORE,
-		SCENE_BATTLE,
-		SCENE_HEALING,
-		SCENE_MAX,
-		SCENE_EXIT,
-		SCENE_NOCHANGE,
-		SCENE_ERROR	//원치 않은 값이 들어온 경우(ex. 1~2의 선택지, 입력: 5)
+		SCENE_MAIN,			//메인 화면
+		SCENE_HOWTOPLAY,	//How to Play 화면
+
+		SCENE_TOWN,			//마을 화면
+		SCENE_STORE,		//상점 화면
+		SCENE_FOREST,		//숲 화면
+		SCENE_BATTLE,		//전투 화면
+		SCENE_STAT,			//상태 표시 화면
+
+		SCENE_ENDING,		//엔딩 화면
+		SCENE_MAX,			//씬의 끝	
+
+		SCENE_EXIT,			//게임 끝내기
+		SCENE_NOCHANGE,		//씬이 전환 없음
+		SCENE_ERROR			//원치 않은 값이 들어온 경우(ex. 1~2의 선택지, 입력: 5)
 	}; 
 
 public:
