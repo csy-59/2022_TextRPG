@@ -1,5 +1,4 @@
 #pragma once
-#include <string>
 
 class Scene
 {
@@ -26,9 +25,6 @@ public:
 	Scene(const Scene&) = default;
 	Scene& operator=(const Scene&) = default;
 	~Scene() = default;
-
-	//getter
-	int GetOptionCount();
 
 	/// <summary>
 	/// 화면을 구성한다

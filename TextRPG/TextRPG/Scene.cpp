@@ -10,11 +10,6 @@ void Scene::SetOptionCount(int optionCount)
 	_optionCount = optionCount;
 }
 
-int Scene::GetOptionCount()
-{
-	return _optionCount;
-}
-
 void Scene::Render() const
 {
 	return;
