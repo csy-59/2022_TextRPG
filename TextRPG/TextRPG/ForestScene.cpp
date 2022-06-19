@@ -75,7 +75,7 @@ void ForestScene::PrintHeaderInfo() const
 	SETW_COUT << "Lev. " << std::setw(SETW_NUM) << std::right << _gm->GetPlayer()->GetLevel() << " ";
 	SETW_COUT << "| $ " << std::setw(SETW_NUM - 1) << std::right << _gm->GetPlayer()->GetCoinCount() << "G\n";
 
-	SETW_COUT << "¢¾: " << std::setw(SETW_NUM - 3) << std::right << _gm->GetPlayer()->GetCurrentHealth() << "/"
+	SETW_COUT << "¢¾: " << std::setw(SETW_NUM - 2) << std::right << _gm->GetPlayer()->GetCurrentHealth() << "/"
 		<< std::right << std::setw(2) << _gm->GetPlayer()->GetMaxHealth() << " ";
 	SETW_COUT << "| S: " << std::setw(SETW_NUM - 3) << std::right << _gm->GetPlayer()->GetStress() << "/"
 		<< std::right << std::setw(2) << Player::MAX_STRESS << "\n";

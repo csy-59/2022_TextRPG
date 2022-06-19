@@ -76,6 +76,7 @@ void GameManager::UseStatPoint()
 void GameManager::StageUp()
 {
     ++_stage;
+    _player.AddStress(_player.GetStress() / 0.3f);
     _battleCount = 0;
 }
 
