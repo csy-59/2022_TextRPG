@@ -18,6 +18,8 @@ public:
 
 	const Item* GetItem(Item::ItemType itemtype) const;
 
+	void StartBattle();
+
 private:
 	//스테이지 관련 정보
 	//스테이지

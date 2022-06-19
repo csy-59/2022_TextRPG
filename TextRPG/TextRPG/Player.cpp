@@ -60,3 +60,9 @@ void Player::BuyItem(const Item::ItemType itemNumber, const int price)
 	++_itemCount[itemNumber];
 }
 
+void Player::GotToPond()
+{
+	_coin -= 10;
+	_stress -= 5;
+}
+

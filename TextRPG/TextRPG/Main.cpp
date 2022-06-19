@@ -6,6 +6,7 @@
 #include "TownScene.h"
 #include "StatusScene.h"
 #include "StoreScene.h"
+#include "ForestScene.h"
 using namespace std;
 
 
@@ -20,14 +21,16 @@ int main()
 	//씬 객체들 생성
 	MainScene mainScene;
 	HowToScene howToScene;
+
 	TownScene townScene(&gameManager);
 	StatusScene statusScene(&gameManager);
 	StoreScene storeScene(&gameManager);
+	ForestScene forestScene(&gameManager);
 
 	//Scene 리스트
 	static Scene* sceneList[Scene::SCENE_MAX] = {
 		&mainScene, &howToScene, 
-		&townScene, &storeScene, &townScene, &townScene, &statusScene
+		&townScene, &storeScene, &forestScene, &townScene, &statusScene
 	};
 
 	//사용할 씬 레퍼런스
@@ -57,10 +60,11 @@ int main()
 		{
 			continue;
 		}
+
 		if (nextScene == Scene::SCENE_EXIT) //게임 종료이면 게임을 종료시킴
 		{
 			isGameOver = true;
-		}
+		}\
 		else if (nextScene != Scene::SCENE_NOCHANGE) //게임 씬에 전환이 없는 경우 씬을 전환하지 않음
 		{
 			scene = sceneList[nextScene];

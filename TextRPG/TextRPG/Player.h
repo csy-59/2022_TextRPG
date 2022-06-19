@@ -28,6 +28,9 @@ public:
 	//아이템 구매
 	void BuyItem(const Item::ItemType itemNumber, const int price);
 
+	//회복의 연못
+	void GotToPond();
+
 public:
 	static const int MAX_STRESS = 50;
 

@@ -42,3 +42,8 @@ const Item* GameManager::GetItem(Item::ItemType itemtype) const
 {
     return _items[itemtype];
 }
+
+void GameManager::StartBattle()
+{
+    ++_battleCount;
+}
