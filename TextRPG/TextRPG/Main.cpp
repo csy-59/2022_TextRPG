@@ -7,6 +7,8 @@
 #include "StatusScene.h"
 #include "StoreScene.h"
 #include "ForestScene.h"
+#include "BattleScene.h"
+#include "EndingScene.h"
 using namespace std;
 
 
@@ -19,18 +21,22 @@ int main()
 	GameManager gameManager;
 
 	//씬 객체들 생성
-	MainScene mainScene;
+	MainScene mainScene(&gameManager);
 	HowToScene howToScene;
 
 	TownScene townScene(&gameManager);
 	StatusScene statusScene(&gameManager);
 	StoreScene storeScene(&gameManager);
 	ForestScene forestScene(&gameManager);
+	BattleScene battleScene(&gameManager);
+	
+	EndingScene endingScene;
 
 	//Scene 리스트
 	static Scene* sceneList[Scene::SCENE_MAX] = {
 		&mainScene, &howToScene, 
-		&townScene, &storeScene, &forestScene, &townScene, &statusScene
+		&townScene, &storeScene, &forestScene, & battleScene, &statusScene,
+		&endingScene
 	};
 
 	//사용할 씬 레퍼런스
@@ -39,6 +45,7 @@ int main()
 	bool isGameOver = false;
 
 	enum Scene::SceneType nextScene = Scene::SCENE_NOCHANGE;
+	enum Scene::SceneType currentScene = Scene::SCENE_MAIN;
 	while (isGameOver == false)
 	{
 		//전처리
@@ -56,6 +63,8 @@ int main()
 		nextScene = scene->Update(input);
 
 		//씬 후처리
+		statusScene.UpdatePreScene(currentScene);
+
 		if (nextScene == Scene::SCENE_ERROR)
 		{
 			continue;
@@ -64,10 +73,12 @@ int main()
 		if (nextScene == Scene::SCENE_EXIT) //게임 종료이면 게임을 종료시킴
 		{
 			isGameOver = true;
-		}\
+		}
 		else if (nextScene != Scene::SCENE_NOCHANGE) //게임 씬에 전환이 없는 경우 씬을 전환하지 않음
 		{
 			scene = sceneList[nextScene];
+			currentScene = nextScene;
+			scene->Init();
 		}
 	}
 

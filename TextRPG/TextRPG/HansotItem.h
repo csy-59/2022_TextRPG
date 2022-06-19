@@ -9,5 +9,5 @@ public:
 	Hansot_Item& operator=(const Hansot_Item& other) = delete;
 	~Hansot_Item() = default;
 
-	virtual void UseItem();
+	virtual std::string UseItem(Player* player) override;
 };

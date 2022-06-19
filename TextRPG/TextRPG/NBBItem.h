@@ -9,5 +9,5 @@ public:
 	NBB_Item& operator=(const NBB_Item& other) = delete;
 	~NBB_Item() = default;
 
-	virtual void UseItem();
+	virtual std::string UseItem(Player* player) override;
 };

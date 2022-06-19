@@ -16,9 +16,12 @@ public:
 
 	virtual enum SceneType Update(int input);
 
+	static void UpdatePreScene(Scene::SceneType preScene);
+
 private:
 	virtual void printOptions() const override;
 
 private:
 	const GameManager* _gm = nullptr;
+	static Scene::SceneType _previousScene;
 };

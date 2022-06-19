@@ -9,5 +9,5 @@ public:
 	Monster_Item& operator=(const Monster_Item& other) = delete;
 	~Monster_Item() = default;
 
-	virtual void UseItem();
+	virtual std::string UseItem(Player* player) override;
 };

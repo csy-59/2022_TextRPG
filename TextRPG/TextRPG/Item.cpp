@@ -31,8 +31,8 @@ void Item::SetPrice(const int price)
     _price = price;
 }
 
-void Item::UseItem()
+std::string Item::UseItem(Player* player)
 {
     std::cout << "ERROR!!! WORNG ITEM USES\n";
-    return;
+    return "";
 }

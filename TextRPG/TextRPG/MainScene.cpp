@@ -2,9 +2,15 @@
 #include <iostream>
 using namespace std;
 
-MainScene::MainScene()
+MainScene::MainScene(GameManager* gm)
+	:_gm(gm) 
 {
 	SetOptionCount(OPTION_NUMBER);
+}
+
+void MainScene::Init()
+{
+	_gm->Restart();
 }
 
 void MainScene::Render() const

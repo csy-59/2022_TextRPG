@@ -139,6 +139,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BattleScene.cpp" />
+    <ClCompile Include="EndingScene.cpp" />
     <ClCompile Include="ForestScene.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="HansotItem.cpp" />
@@ -147,9 +149,11 @@
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MainScene.cpp" />
+    <ClCompile Include="Monster.cpp" />
     <ClCompile Include="MonsterItem.cpp" />
     <ClCompile Include="NBBItem.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Random.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="StatusScene.cpp" />
     <ClCompile Include="StoreScene.cpp" />
@@ -157,6 +161,8 @@
     <ClCompile Include="TownScene.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BattleScene.h" />
+    <ClInclude Include="EndingScene.h" />
     <ClInclude Include="ForestScene.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="HansotItem.h" />
@@ -170,7 +176,6 @@
     <ClInclude Include="Random.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneManager.h" />
-    <ClInclude Include="Skill.h" />
     <ClInclude Include="MainScene.h" />
     <ClInclude Include="StatusScene.h" />
     <ClInclude Include="StoreScene.h" />

@@ -17,8 +17,15 @@ public:
 	Player* GetPlayer();
 
 	const Item* GetItem(Item::ItemType itemtype) const;
+	int GetStatPoint() const;
+	void SetStatPoint(int StatPoint) ;
 
 	void StartBattle();
+	std::string UseItem(Item::ItemType itemType);
+	void UseStatPoint();
+	void StageUp();
+
+	void Restart();
 
 private:
 	//스테이지 관련 정보
@@ -28,6 +35,7 @@ private:
 
 	//플레이어 기본 정보
 	Player _player;
+	int _statPoint = 0;
 
 	//아이템 종류
 	Item* _items[Item::ITEM_MAX];

@@ -31,6 +31,11 @@ public:
 	~Scene() = default;
 
 	/// <summary>
+	/// 씬 전처리
+	/// </summary>
+	virtual void Init();
+
+	/// <summary>
 	/// 화면을 구성한다
 	/// </summary>
 	virtual void Render() const;

@@ -35,7 +35,7 @@ void TownScene::PrintHeaderInfo() const
 void TownScene::PrintMainMessage() const
 {
 	static const std::string mainMessages[2] = {
-		"시작의 마을이다...\n",
+		"마을이다...\n",
 		"무엇을 할까?\n"
 	};
 

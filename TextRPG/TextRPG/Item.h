@@ -1,4 +1,5 @@
 #pragma once
+#include "Player.h"
 #include <string>
 
 class Item
@@ -22,7 +23,7 @@ public:
 	std::string GetInfo() const;
 	int GetPrice() const;
 
-	virtual void UseItem();
+	virtual std::string UseItem(class Player* player);
 
 protected:
 	//setter

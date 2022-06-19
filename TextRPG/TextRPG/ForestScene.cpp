@@ -39,14 +39,21 @@ Scene::SceneType ForestScene::Update(int input)
 
 		if (_gm->GetBattleCount() % 3 == 0 && _gm->GetBattleCount() != 0)
 		{
-			if (input != 2)
+			if (input < 2 || input > 3)
 			{
 				return Scene::SCENE_ERROR;
 			}
 
-			_isInPond = true;
-			_pondSceneCount = 0;
-			return Scene::SCENE_NOCHANGE;
+			if (input == 2)
+			{
+				_isInPond = true;
+				_pondSceneCount = 0;
+				return Scene::SCENE_NOCHANGE;
+			}
+			else if (input == 3)
+			{
+				return Scene::SCENE_STAT;
+			}
 		}
 		else
 		{
@@ -123,7 +130,13 @@ void ForestScene::printOptions() const
 		if (_gm->GetBattleCount() % 3 == 0 && _gm->GetBattleCount() != 0 && _gm->GetPlayer()->GetCoinCount() >= 10)
 		{
 			cout << "2. " << mainOptions[1] << "\n";
+			cout << "3. ";
 		}
+		else
+		{
+			cout << "2. ";
+		}
+		cout << "상세 스탯을 확인한다.\n";
 
 	}
 }
