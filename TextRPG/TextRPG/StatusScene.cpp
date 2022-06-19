@@ -1,25 +1,27 @@
 #include "StatusScene.h"
+#include "Item.h"
 #include <iostream>
 using namespace std;
 
-StatusScene::StatusScene(const Player* player)
+StatusScene::StatusScene(const GameManager* gm)
 {
-	_player = player;
+	_gm = gm;
 }
 
 void StatusScene::Render() const
 {
-	cout << "| 스탯 확인\n";
-	cout << "레벨: "<<_player->GetLevel()<<"(다음 레벨업까지... "<<_player->GetNextLevelExp()<<")\n";
-	cout << "체력: " << _player->GetCurrentHealth() << "/" << _player->GetMaxHealth() << "\n";
-	cout << "공격력: " << _player->GetAttack() << "\n";
-	cout << "방어력: " << _player->GetDefence() << "\n";
-	cout << "스트레스: " << _player->GetStress() << "/" << Player::MAX_STRESS << "\n\n";
+	cout << "※ 스탯 확인\n";
+	cout << "레벨: "<<_gm->GetPlayer()->GetLevel() << "(다음 레벨업까지... " << _gm->GetPlayer()->GetNextLevelExp() << ")\n";
+	cout << "체력: " << _gm->GetPlayer()->GetCurrentHealth() << "/" << _gm->GetPlayer()->GetMaxHealth() << "\n";
+	cout << "공격력: " << _gm->GetPlayer()->GetAttack() << "\n";
+	cout << "방어력: " << _gm->GetPlayer()->GetDefence() << "\n";
+	cout << "스트레스: " << _gm->GetPlayer()->GetStress() << "/" << Player::MAX_STRESS << "\n\n";
 
-	cout << "| 인밴토리 확인\n";
-	cout << "한솥 X " << _player->GetHansotCount() << "\n";
-	cout << "NBB X " << _player->GetNBBCount() << "\n";
-	cout << "몬스터 X " << _player->GetMonsterCount() << "\n";
+	cout << "※ 인밴토리 확인\n";
+	for (int i = 0; i < Item::ITEM_MAX; i++)
+	{
+		cout << _gm->GetItem((Item::ItemType)i)->GetName() << " X " << _gm->GetPlayer()->GetItemCount()[i] << "\n";
+	}
 
 	printOptions();
 }

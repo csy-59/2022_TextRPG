@@ -1,12 +1,13 @@
 #pragma once
 #include "Scene.h"
 #include "Player.h"
+#include "GameManager.h"
 
 class StatusScene : public Scene
 {
 public:
 	StatusScene() = delete;
-	StatusScene(const Player* player);
+	StatusScene(const GameManager* gm);
 	StatusScene(const StatusScene& other) = default;
 	~StatusScene() = default;
 
@@ -19,5 +20,5 @@ private:
 	virtual void printOptions() const override;
 
 private:
-	const Player* _player = nullptr;
+	const GameManager* _gm = nullptr;
 };

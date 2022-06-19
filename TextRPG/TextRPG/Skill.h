@@ -25,7 +25,7 @@ public:
 	int GetCurrentSkillPoint();
 
 	//스킬 사용
-	virtual std::string* Use(Player& player, Monster& monster);
+	//virtual std::string* Use(Player& player, Monster& monster);
 
 private:
 	//안내문

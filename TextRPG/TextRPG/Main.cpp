@@ -3,6 +3,9 @@
 #include "Scene.h"
 #include "MainScene.h"
 #include "HowToScene.h"
+#include "TownScene.h"
+#include "StatusScene.h"
+#include "StoreScene.h"
 using namespace std;
 
 
@@ -11,13 +14,20 @@ int main()
 	//랜덤 함수 초기화
 	Random::Init();
 
+	//Game관련
+	GameManager gameManager;
+
 	//씬 객체들 생성
 	MainScene mainScene;
 	HowToScene howToScene;
+	TownScene townScene(&gameManager);
+	StatusScene statusScene(&gameManager);
+	StoreScene storeScene(&gameManager);
 
 	//Scene 리스트
 	static Scene* sceneList[Scene::SCENE_MAX] = {
-		&mainScene, &howToScene, &mainScene, &mainScene
+		&mainScene, &howToScene, 
+		&townScene, &storeScene, &townScene, &townScene, &statusScene
 	};
 
 	//사용할 씬 레퍼런스
@@ -43,6 +53,10 @@ int main()
 		nextScene = scene->Update(input);
 
 		//씬 후처리
+		if (nextScene == Scene::SCENE_ERROR)
+		{
+			continue;
+		}
 		if (nextScene == Scene::SCENE_EXIT) //게임 종료이면 게임을 종료시킴
 		{
 			isGameOver = true;

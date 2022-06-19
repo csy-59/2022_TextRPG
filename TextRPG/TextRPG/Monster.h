@@ -37,7 +37,7 @@ public:
 	int GetMaxHealth();
 	int GetCurrentHealth();
 
-	void Attack(Player& player);
+	//void Attack(Player& player);
 	void GetAttacked(int damage);
 	int DropCoin();
 

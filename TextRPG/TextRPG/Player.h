@@ -5,7 +5,10 @@
 class Player
 {
 public:
-
+	Player();
+	Player(const Player& other) = delete;
+	Player& operator=(const Player& other) = delete;
+	~Player();
 
 	//능력치 관련
 	int GetMaxHealth() const;
@@ -20,9 +23,10 @@ public:
 
 	//아이템 관련 Getter
 	int GetCoinCount() const;
-	int GetHansotCount() const;
-	int GetNBBCount() const;
-	int GetMonsterCount() const;
+	const int* GetItemCount() const;
+
+	//아이템 구매
+	void BuyItem(const Item::ItemType itemNumber, const int price);
 
 public:
 	static const int MAX_STRESS = 50;
@@ -48,6 +52,5 @@ private:
 	Skill _skills[2];
 
 	//아이템 관련
-	static const Item _items[3];
-	int _itemCount[3] = { 0 };
+	int _itemCount[Item::ITEM_MAX] = { 0 };
 };
