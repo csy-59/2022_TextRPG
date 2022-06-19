@@ -4,6 +4,13 @@
 
 class TownScene : public InGameScene
 {
+public:
+	TownScene() = delete;
+	TownScene(const GameManager* gm);
+	TownScene(const TownScene& other) = default;
+	TownScene& operator=(const TownScene& other) = default;
+	~TownScene() = default;
+
 	virtual enum SceneType Update(int input);
 
 private:
@@ -15,6 +22,12 @@ private:
 
 	virtual void PrintFooterInfo() const override;
 
+	virtual void printOptions() const override;
+
 private:
-	GameManager* _gm;
+	const GameManager* _gm;
+	static const int OPTION_COUNT = 3;
+	const SceneType _optionsNextScene[OPTION_COUNT] = {
+		SCENE_FOREST, SCENE_STORE, SCENE_STAT
+	};
 };
