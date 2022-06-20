@@ -37,7 +37,7 @@ Scene::SceneType ForestScene::Update(int input)
 			return Scene::SCENE_BATTLE;
 		}
 
-		if (_gm->GetBattleCount() % 3 == 0 && _gm->GetBattleCount() != 0)
+		if (_gm->GetBattleCount() % 3 == 0 && _gm->GetBattleCount() != 0 && _gm->GetPlayer()->GetCoinCount() >= 10)
 		{
 			if (input < 2 || input > 3)
 			{
