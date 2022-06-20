@@ -8,7 +8,7 @@ BattleScene::BattleScene(GameManager* gm)
 {
 	monsterList[0][0] = new Monster("이론몬", "교수님의 기습 질문!", "객체 지향적 프로그래밍이란 무엇이죠?", 
 		8, 8, 5, 3, 25, 5);
-	monsterList[0][1] = new Monster("최선몬", "룰렛 돌리겠습니다.", "테크톡 매일매일 하는 걸로 바꾸겠습니다.", 
+	monsterList[0][1] = new Monster("??몬", "룰렛 돌리겠습니다.", "테크톡 매일매일 하는 걸로 바꾸겠습니다.", 
 		10, 10, 3, 2, 25, 5);
 	monsterList[1][0] = new Monster("실습몬", "나는 바보다 히히", "??: 라이브쉐어 들어오세요", 
 		15, 15, 8, 5, 25, 10);
